@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ultras Dynamo Kyiv</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: radial-gradient(circle at top, #0d1b55, #020414);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
+          url("https://upload.wikimedia.org/wikipedia/commons/7/7e/NSC_Olimpiyskiy_Kyiv.jpg")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .hero-box {
+        max-width: 620px;
+        width: 100%;
+        background: rgba(0, 30, 120, 0.25);
+        backdrop-filter: blur(12px);
+        border-radius: 28px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+        animation: fadeUp 1.2s ease;
+      }
+
+      .logo {
+        width: 110px;
+        margin-bottom: 16px;
+        animation: pulse 3s infinite;
+        filter: drop-shadow(0 0 15px rgba(0, 140, 255, 0.6));
+      }
+
+      h1 {
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+      }
+
+      .sub {
+        opacity: 0.85;
+        margin-bottom: 28px;
+        font-size: 16px;
+      }
+
+      /* FORM */
+      .form {
+        display: grid;
+        gap: 16px;
+        margin-top: 12px;
+      }
+
+      .form input {
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .form button {
+        margin-top: 6px;
+        padding: 16px;
+        border-radius: 16px;
+        border: none;
+        font-size: 16px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #00b3ff, #0047ff);
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 10px 30px rgba(0, 120, 255, 0.5);
+      }
+
+      .form button:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 20px 45px rgba(0, 120, 255, 0.7);
+      }
+
+      .success {
+        margin-top: 20px;
+        display: none;
+        color: #6dff8a;
+        font-weight: 600;
+        animation: fadeUp 0.6s ease;
+      }
+
+      /* INFO */
+      .info {
+        max-width: 1100px;
+        margin: auto;
+        padding: 90px 20px 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 26px;
+      }
+
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 90, 255, 0.15),
+          rgba(0, 90, 255, 0.02)
+        );
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+        transition: 0.35s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      /* GALLERY */
+      .gallery {
+        padding: 70px 20px 90px;
+        text-align: center;
+      }
+
+      .gallery h2 {
+        font-size: 34px;
+        margin-bottom: 30px;
+      }
+
+      .gallery-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 22px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        transition: 0.4s;
+      }
+      .gallery-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8);
+      }
+
+      footer {
+        text-align: center;
+        padding: 26px;
+        opacity: 0.6;
+        font-size: 14px;
+      }
+
+      .swiper {
+        max-width: 1200px;
+        margin: auto;
+        border-radius: 24px;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #00b3ff;
+      }
+
+      .swiper-pagination-bullet {
+        background: #00b3ff;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-box">
+        <img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dynamo_logo.svg/643px-Dynamo_logo.svg.png"
+          alt="Dynamo Kyiv"
+        />
+        <h1>ULTRAS DYNAMO</h1>
+        <div class="sub">
+          Попади в ультрас-сообщество — поддерживай команду вместе с нами
+        </div>
+
+        <form class="form" id="joinForm">
+          <input type="text" name="firstName" placeholder="ім'я" required />
+          <input
+            type="number"
+            name="age"
+            placeholder="Скільки років"
+            min="10"
+            max="99"
+            required
+          />
+          <input type="text" name="callsign" placeholder="Позивний" required />
+          <button type="submit">Оставить заявку</button>
+        </form>
+
+        <div class="success" id="success">
+          Заявка отправлена! Мы свяжемся с тобой.
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="card">
+        <h3>Хто ми</h3>
+        <p>
+          Ми — активні вболівальники, які підтримують улюблену команду на
+          кожному матчі вдома та на виїзді.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Що потрібно</h3>
+        <p>
+          Вірність клубу, активність, повага до інших та готовність підтримувати
+          команду за будь-якої погоди.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Що ти отримаєш</h3>
+        <p>
+          Незабутню атмосферу матчів, нових друзів, виїзди та участь у фан-русі.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Хто ми</h3>
+        <p>
+          Ми — організоване фанатське угрупування ФК «Динамо» Київ. Ми
+          підтримуємо команду на кожному матчі: вдома, на виїздах і у найважчі
+          моменти. Ultras — це не просто фанати, це стиль життя.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Наша мета</h3>
+        <p>
+          Наша мета — створювати максимум шуму на трибунах, підтримувати команду
+          до фінального свистка та розвивати фан-рух «Динамо» по всій Україні.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Що від тебе потрібно</h3>
+        <p>
+          Вірність клубу, дисципліна, повага до старших, активна участь у
+          підтримці, готовність до виїздів та життя фанатського руху.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Що ти отримаєш</h3>
+        <p>
+          Справжню братерську атмосферу, підтримку своїх, нові знайомства,
+          участь у перформансах, виїздах і фанатських подіях.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Правила Ultras</h3>
+        <p>
+          Заборонено: зрада клубу, провокації всередині руху, неповага до своїх.
+          Головні принципи — єдність, честь, підтримка до кінця.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>З якого віку</h3>
+        <p>
+          Приймаємо з 14 років. До 18 років — лише зі згоди батьків на виїзні
+          матчі.
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Наша атмосфера</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://img.tsn.ua/cached/495/tsn-8f26524e6da81d4b3cfbee3f2194473a/thumbs/1200x630/43/64/d0abdb92240a86d858091cba485b6443.jpeg"
+              alt="Fans"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img
+              src="https://zn.ua/img/forall/u/14/1/13396341.jpg"
+              alt="Match"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img
+              src="https://fcdynamo.com/img/match_center/matches/200/stadion5-dynamo-23-09-20211.jpg?fm=jpg&q=80&fit=max&crop=2212%2C1500%2C0%2C0"
+              alt="Stadium"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img
+              src="https://dynamo.kiev.ua/media/posts/2025/02/02/55.jpg"
+              alt="Training"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img
+              src="https://pictures.ua.tribuna.com/image/50dd562f-31d7-4dc7-86a3-69a02efffd61"
+              alt="Team"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img
+              src="https://fcdynamo.com/img/img/content/pages/15/cover-1.jpg"
+              alt="Logo"
+            />
+          </div>
+        </div>
+
+        <!-- Навигация -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Точки -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <footer>© 2025 Ultras Dynamo Kyiv | Все права защищены</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+
+      const form = document.getElementById("joinForm");
+      const success = document.getElementById("success");
+
+      // TODO: Insert your Telegram Bot API token and chat ID here
+      const TELEGRAM_BOT_TOKEN =
+        "8458737346:AAGetvh6gCAjvztcYD9LYF16m0n0Br95E64";
+      const TELEGRAM_CHAT_ID = "@DynamoUltrase";
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const firstName = form.firstName.value;
+        const lastName = form.lastName.value;
+        const age = form.age.value;
+        const callsign = form.callsign.value;
+
+        const message = `🔵⚪ Нова заявка в Ultras Dynamo!\n\n👤 Ім'я: ${firstName}\n👤 Прізвище: ${lastName}\n🎂 Вік: ${age}\n📛 Позивний: ${callsign}`;
+
+        try {
+          const response = await fetch(
+            `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: "HTML",
+              }),
+            }
+          );
+
+          if (response.ok) {
+            success.style.display = "block";
+            form.reset();
+          } else {
+            alert("Помилка при відправці. Спробуйте ще раз.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Помилка при відправці. Спробуйте ще раз.");
+        }
+      });
+    </script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
