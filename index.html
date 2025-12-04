@@ -12,331 +12,174 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        font-family: "Montserrat", sans-serif;
-        background: radial-gradient(circle at top, #0d1b55, #020414);
-        color: #fff;
-        overflow-x: hidden;
-      }
-
-      /* HERO */
-      .hero {
-        min-height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
-          url("https://upload.wikimedia.org/wikipedia/commons/7/7e/NSC_Olimpiyskiy_Kyiv.jpg")
-            center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 20px;
-      }
-
-      .hero-box {
-        max-width: 620px;
-        width: 100%;
-        background: rgba(0, 30, 120, 0.25);
-        backdrop-filter: blur(12px);
-        border-radius: 28px;
-        padding: 40px 30px;
-        text-align: center;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-        animation: fadeUp 1.2s ease;
-      }
-
-      .logo {
-        width: 110px;
-        margin-bottom: 16px;
-        animation: pulse 3s infinite;
-        filter: drop-shadow(0 0 15px rgba(0, 140, 255, 0.6));
-      }
-
-      h1 {
-        font-size: 38px;
-        font-weight: 800;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-      }
-
-      .sub {
-        opacity: 0.85;
-        margin-bottom: 28px;
-        font-size: 16px;
-      }
-
-      /* FORM */
-      .form {
-        display: grid;
-        gap: 16px;
-        margin-top: 12px;
-      }
-
-      .form input {
-        padding: 14px 16px;
-        border-radius: 14px;
-        border: none;
-        outline: none;
-        font-size: 15px;
-      }
-
-      .form button {
-        margin-top: 6px;
-        padding: 16px;
-        border-radius: 16px;
-        border: none;
-        font-size: 16px;
-        font-weight: 700;
-        background: linear-gradient(135deg, #00b3ff, #0047ff);
-        color: #fff;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 10px 30px rgba(0, 120, 255, 0.5);
-      }
-
-      .form button:hover {
-        transform: translateY(-3px) scale(1.04);
-        box-shadow: 0 20px 45px rgba(0, 120, 255, 0.7);
-      }
-
-      .success {
-        margin-top: 20px;
-        display: none;
-        color: #6dff8a;
-        font-weight: 600;
-        animation: fadeUp 0.6s ease;
-      }
-
-      /* INFO */
-      .info {
-        max-width: 1100px;
-        margin: auto;
-        padding: 90px 20px 60px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 26px;
-      }
-
-      .card {
-        background: linear-gradient(
-          180deg,
-          rgba(0, 90, 255, 0.15),
-          rgba(0, 90, 255, 0.02)
-        );
-        border-radius: 24px;
-        padding: 30px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
-        transition: 0.35s;
-      }
-
-      .card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-      }
-
-      .card h3 {
-        margin-bottom: 10px;
-        font-size: 20px;
-      }
-
-      /* GALLERY */
-      .gallery {
-        padding: 70px 20px 90px;
-        text-align: center;
-      }
-
-      .gallery h2 {
-        font-size: 34px;
-        margin-bottom: 30px;
-      }
-
-      .gallery-grid {
-        max-width: 1200px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 22px;
-      }
-
-      .gallery-grid img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-        transition: 0.4s;
-      }
-      .gallery-grid img:hover {
-        transform: scale(1.1);
-        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8);
-      }
-
-      footer {
-        text-align: center;
-        padding: 26px;
-        opacity: 0.6;
-        font-size: 14px;
-      }
-
-      .swiper {
-        max-width: 1200px;
-        margin: auto;
-        border-radius: 24px;
-      }
-
-      .swiper-slide img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        border-radius: 24px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #00b3ff;
-      }
-
-      .swiper-pagination-bullet {
-        background: #00b3ff;
-      }
-
-      /* ANIMATIONS */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.08);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section class="hero">
-      <div class="hero-box">
-        <img
-          class="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dynamo_logo.svg/643px-Dynamo_logo.svg.png"
-          alt="Dynamo Kyiv"
-        />
-        <h1>ULTRAS DYNAMO</h1>
-        <div class="sub">
-          Попади в ультрас-сообщество — поддерживай команду вместе с нами
-        </div>
-
-        <form class="form" id="joinForm">
-          <input type="text" name="firstName" placeholder="ім'я" required />
-          <input
-            type="number"
-            name="age"
-            placeholder="Скільки років"
-            min="10"
-            max="99"
-            required
+    <header class="header">
+      <div class="header-container">
+        <div class="header-logo-container">
+          <img
+            class="header-logo-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dynamo_logo.svg/643px-Dynamo_logo.svg.png"
+            alt="Dynamo Kyiv"
           />
-          <input type="text" name="callsign" placeholder="Позивний" required />
-          <button type="submit">Оставить заявку</button>
-        </form>
+          <a href="#home" class="header-logo">ULTRAS DYNAMO</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav">
+          <a href="#home" class="nav-link">Головна</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="#gallery" class="nav-link">Галерея</a>
+          <a href="#join" class="nav-link">Приєднатись</a>
+        </nav>
+      </div>
+    </header>
 
-        <div class="success" id="success">
-          Заявка отправлена! Мы свяжемся с тобой.
+    <section class="banner" id="home">
+      <div class="banner-container">
+        <div class="banner-left-block">
+          <span class="banner-badge">Офіційний фан-рух</span>
+          <h1 class="banner-title">Ultras Dynamo Kyiv</h1>
+          <p class="banner-description">
+            Попади в ультрас-сообщество — поддерживай команду вместе с нами на
+            кожному матчі
+          </p>
+          <div class="banner-buttons">
+            <a href="#join" class="main-button more-info-btn"
+              >Залишити заявку</a
+            >
+            <a href="#gallery" class="banner-secondary-btn">Дивитись галерею</a>
+          </div>
+        </div>
+        <div class="banner-right-block">
+          <div class="banner-image-wrapper">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dynamo_logo.svg/643px-Dynamo_logo.svg.png"
+              alt="Dynamo Kyiv Logo"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="info">
-      <div class="card">
-        <h3>Хто ми</h3>
-        <p>
-          Ми — активні вболівальники, які підтримують улюблену команду на
-          кожному матчі вдома та на виїзді.
-        </p>
-      </div>
+    <section class="why-choose-us">
+      <div class="why-choose-us-container">
+        <div class="why-choose-us-header">
+          <h2>Чому обирають нас</h2>
+          <p>Приєднуйся до найбільшого фан-руху України</p>
+        </div>
 
-      <div class="card">
-        <h3>Що потрібно</h3>
-        <p>
-          Вірність клубу, активність, повага до інших та готовність підтримувати
-          команду за будь-якої погоди.
-        </p>
-      </div>
+        <div class="why-choose-us-grid">
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Братерство</h3>
+            <p>
+              Тисячі однодумців по всій Україні. Підтримка та взаємодопомога на
+              кожному кроці.
+            </p>
+          </div>
 
-      <div class="card">
-        <h3>Що ти отримаєш</h3>
-        <p>
-          Незабутню атмосферу матчів, нових друзів, виїзди та участь у фан-русі.
-        </p>
-      </div>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
+              </svg>
+            </div>
+            <h3>Традиції</h3>
+            <p>
+              Більше 30 років історії. Ми зберігаємо та передаємо традиції
+              справжнього фан-руху.
+            </p>
+          </div>
 
-      <div class="card">
-        <h3>Хто ми</h3>
-        <p>
-          Ми — організоване фанатське угрупування ФК «Динамо» Київ. Ми
-          підтримуємо команду на кожному матчі: вдома, на виїздах і у найважчі
-          моменти. Ultras — це не просто фанати, це стиль життя.
-        </p>
-      </div>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Виїзди</h3>
+            <p>
+              Організовані поїздки на всі матчі. Підтримуємо команду вдома та на
+              виїздах.
+            </p>
+          </div>
 
-      <div class="card">
-        <h3>Наша мета</h3>
-        <p>
-          Наша мета — створювати максимум шуму на трибунах, підтримувати команду
-          до фінального свистка та розвивати фан-рух «Динамо» по всій Україні.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Що від тебе потрібно</h3>
-        <p>
-          Вірність клубу, дисципліна, повага до старших, активна участь у
-          підтримці, готовність до виїздів та життя фанатського руху.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Що ти отримаєш</h3>
-        <p>
-          Справжню братерську атмосферу, підтримку своїх, нові знайомства,
-          участь у перформансах, виїздах і фанатських подіях.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Правила Ultras</h3>
-        <p>
-          Заборонено: зрада клубу, провокації всередині руху, неповага до своїх.
-          Головні принципи — єдність, честь, підтримка до кінця.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>З якого віку</h3>
-        <p>
-          Приймаємо з 14 років. До 18 років — лише зі згоди батьків на виїзні
-          матчі.
-        </p>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"
+                ></path>
+                <path
+                  d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+                ></path>
+                <path
+                  d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"
+                ></path>
+                <path
+                  d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"
+                ></path>
+                <path
+                  d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"
+                ></path>
+                <path
+                  d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"
+                ></path>
+                <path
+                  d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"
+                ></path>
+                <path
+                  d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Перформанси</h3>
+            <p>
+              Грандіозні тіфо, піротехніка та шоу на трибунах. Створюємо
+              незабутню атмосферу.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <h2>Наша атмосфера</h2>
 
       <div class="swiper mySwiper">
@@ -393,7 +236,137 @@
       </div>
     </section>
 
-    <footer>© 2025 Ultras Dynamo Kyiv | Все права защищены</footer>
+    <section class="hero" id="join">
+      <div class="hero-box">
+        <img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dynamo_logo.svg/643px-Dynamo_logo.svg.png"
+          alt="Dynamo Kyiv"
+        />
+        <h1>ULTRAS DYNAMO</h1>
+        <div class="sub">
+          Попади в ультрас-сообщество — поддерживай команду вместе с нами
+        </div>
+
+        <form class="form" id="joinForm">
+          <input type="text" name="firstName" placeholder="Ім'я" required />
+          <input
+            type="number"
+            name="age"
+            placeholder="Скільки років"
+            min="10"
+            max="99"
+            required
+          />
+          <input type="text" name="callsign" placeholder="Позивний" required />
+          <button type="submit" class="main-button">Оставить заявку</button>
+        </form>
+
+        <div class="success" id="success">
+          Заявка отправлена! Мы свяжемся с тобой.
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq-header">
+        <h2>FAQ</h2>
+        <p>Все, що потрібно знати про Ultras Dynamo</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span><span class="faq-number">01</span>Хто ми?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Ми — організоване фанатське угрупування ФК «Динамо» Київ. Ми
+            підтримуємо команду на кожному матчі: вдома, на виїздах і у найважчі
+            моменти. Ultras — це не просто фанати, це стиль життя.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span><span class="faq-number">02</span>Яка наша мета?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Наша мета — створювати максимум шуму на трибунах, підтримувати
+            команду до фінального свистка та розвивати фан-рух «Динамо» по всій
+            Україні.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span><span class="faq-number">03</span>Що від тебе потрібно?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Вірність клубу, дисципліна, повага до старших, активна участь у
+            підтримці, готовність до виїздів та життя фанатського руху.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span><span class="faq-number">04</span>Що ти отримаєш?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Справжню братерську атмосферу, підтримку своїх, нові знайомства,
+            участь у перформансах, виїздах і фанатських подіях. Незабутню
+            атмосферу матчів та нових друзів.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span><span class="faq-number">05</span>Які правила Ultras?</span>
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Заборонено: зрада клубу, провокації всередині руху, неповага до
+            своїх. Головні принципи — єдність, честь, підтримка до кінця.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span
+            ><span class="faq-number">06</span>З якого віку можна
+            приєднатися?</span
+          >
+          <div class="faq-icon"></div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            Приймаємо з 14 років. До 18 років — лише зі згоди батьків на виїзні
+            матчі.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">ULTRAS DYNAMO</a>
+          <p>© 2025 Ultras Dynamo Kyiv. Всі права захищені.</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
 
@@ -468,6 +441,41 @@
             slidesPerView: 3,
           },
         },
+      });
+
+      // Mobile Menu Toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      // Close menu when clicking a nav link
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.parentElement;
+          const isActive = faqItem.classList.contains("active");
+
+          // Close all other items
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          // Toggle current item
+          if (!isActive) {
+            faqItem.classList.add("active");
+          }
+        });
       });
     </script>
   </body>
