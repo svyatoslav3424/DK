@@ -368,12 +368,12 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
       const form = document.getElementById("joinForm");
       const success = document.getElementById("success");
 
-      // TODO: Insert your Telegram Bot API token and chat ID here
       const TELEGRAM_BOT_TOKEN =
         "8458737346:AAGetvh6gCAjvztcYD9LYF16m0n0Br95E64";
       const TELEGRAM_CHAT_ID = "@DynamoUltrase";
@@ -382,11 +382,10 @@
         e.preventDefault();
 
         const firstName = form.firstName.value;
-        const lastName = form.lastName.value;
         const age = form.age.value;
         const callsign = form.callsign.value;
 
-        const message = `🔵⚪ Нова заявка в Ultras Dynamo!\n\n👤 Ім'я: ${firstName}\n👤 Прізвище: ${lastName}\n🎂 Вік: ${age}\n📛 Позивний: ${callsign}`;
+        const message = `Нова заявка\nІм'я: ${firstName}\nВік: ${age}\nПозивний: ${callsign}`;
 
         try {
           const response = await fetch(
