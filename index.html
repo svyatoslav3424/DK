@@ -8,12 +8,14 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="gallery.css" />
   </head>
   <body>
     <header class="header">
@@ -182,57 +184,75 @@
     <section class="gallery" id="gallery">
       <h2>Наша атмосфера</h2>
 
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img
-              src="https://img.tsn.ua/cached/495/tsn-8f26524e6da81d4b3cfbee3f2194473a/thumbs/1200x630/43/64/d0abdb92240a86d858091cba485b6443.jpeg"
-              alt="Fans"
-            />
-          </div>
+      <div class="gallery-grid">
+        <a
+          href="https://img.tsn.ua/cached/495/tsn-8f26524e6da81d4b3cfbee3f2194473a/thumbs/1200x630/43/64/d0abdb92240a86d858091cba485b6443.jpeg"
+          data-lightbox="gallery"
+          data-title="Вболівальники"
+          class="gallery-item"
+        >
+          <img
+            src="https://img.tsn.ua/cached/495/tsn-8f26524e6da81d4b3cfbee3f2194473a/thumbs/1200x630/43/64/d0abdb92240a86d858091cba485b6443.jpeg"
+            alt="Fans"
+          />
+        </a>
 
-          <div class="swiper-slide">
-            <img
-              src="https://zn.ua/img/forall/u/14/1/13396341.jpg"
-              alt="Match"
-            />
-          </div>
+        <a
+          href="https://zn.ua/img/forall/u/14/1/13396341.jpg"
+          data-lightbox="gallery"
+          data-title="Матч"
+          class="gallery-item"
+        >
+          <img src="https://zn.ua/img/forall/u/14/1/13396341.jpg" alt="Match" />
+        </a>
 
-          <div class="swiper-slide">
-            <img
-              src="https://fcdynamo.com/img/match_center/matches/200/stadion5-dynamo-23-09-20211.jpg?fm=jpg&q=80&fit=max&crop=2212%2C1500%2C0%2C0"
-              alt="Stadium"
-            />
-          </div>
+        <a
+          href="https://fcdynamo.com/img/match_center/matches/200/stadion5-dynamo-23-09-20211.jpg?fm=jpg&q=80&fit=max&crop=2212%2C1500%2C0%2C0"
+          data-lightbox="gallery"
+          data-title="Стадіон"
+          class="gallery-item"
+        >
+          <img
+            src="https://fcdynamo.com/img/match_center/matches/200/stadion5-dynamo-23-09-20211.jpg?fm=jpg&q=80&fit=max&crop=2212%2C1500%2C0%2C0"
+            alt="Stadium"
+          />
+        </a>
 
-          <div class="swiper-slide">
-            <img
-              src="https://dynamo.kiev.ua/media/posts/2025/02/02/55.jpg"
-              alt="Training"
-            />
-          </div>
+        <a
+          href="https://dynamo.kiev.ua/media/posts/2025/02/02/55.jpg"
+          data-lightbox="gallery"
+          data-title="Тренування"
+          class="gallery-item"
+        >
+          <img
+            src="https://dynamo.kiev.ua/media/posts/2025/02/02/55.jpg"
+            alt="Training"
+          />
+        </a>
 
-          <div class="swiper-slide">
-            <img
-              src="https://pictures.ua.tribuna.com/image/50dd562f-31d7-4dc7-86a3-69a02efffd61"
-              alt="Team"
-            />
-          </div>
+        <a
+          href="https://pictures.ua.tribuna.com/image/50dd562f-31d7-4dc7-86a3-69a02efffd61"
+          data-lightbox="gallery"
+          data-title="Команда"
+          class="gallery-item"
+        >
+          <img
+            src="https://pictures.ua.tribuna.com/image/50dd562f-31d7-4dc7-86a3-69a02efffd61"
+            alt="Team"
+          />
+        </a>
 
-          <div class="swiper-slide">
-            <img
-              src="https://fcdynamo.com/img/img/content/pages/15/cover-1.jpg"
-              alt="Logo"
-            />
-          </div>
-        </div>
-
-        <!-- Навигация -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        <!-- Точки -->
-        <div class="swiper-pagination"></div>
+        <a
+          href="https://fcdynamo.com/img/img/content/pages/15/cover-1.jpg"
+          data-lightbox="gallery"
+          data-title="Логотип"
+          class="gallery-item"
+        >
+          <img
+            src="https://fcdynamo.com/img/img/content/pages/15/cover-1.jpg"
+            alt="Logo"
+          />
+        </a>
       </div>
     </section>
 
@@ -368,7 +388,15 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+      lightbox.option({
+        resizeDuration: 200,
+        wrapAround: true,
+        albumLabel: "Зображення %1 з %2",
+      });
+    </script>
 
     <script>
       const form = document.getElementById("joinForm");
@@ -416,32 +444,6 @@
       });
     </script>
     <script>
-      const swiper = new Swiper(".mySwiper", {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 1,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
-
       // Mobile Menu Toggle
       const menuToggle = document.querySelector(".menu-toggle");
       const nav = document.querySelector(".nav");
